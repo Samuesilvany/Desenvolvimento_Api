@@ -1,4 +1,16 @@
 import { Pool } from 'pg'
-const pool = new Pool()
-const res = await pool.query('SELECT $1::text as message', ['Hello world!'])
+const res = await pool.query('SELECT * FROM frutas', ['Hello world!'])
 console.log(res.rows[0].message);
+
+dotenv.config();
+const { Pool } = pg;
+
+const pool = new Pool({
+    database: process.env.DB_NAME,
+    password: process.env.DB_NAME_PASSWORD,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+});
+
+
