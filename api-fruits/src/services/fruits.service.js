@@ -3,7 +3,7 @@ import { pool } from "../config/db.js"
 class FruitsService {
     async create(nome) {
         const fruits = await read()
-        // const fruits = Array.isArray(data) ? data : [];
+   
 
         try {
             const newFruit = {
